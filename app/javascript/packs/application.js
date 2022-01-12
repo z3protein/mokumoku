@@ -6,6 +6,8 @@
 import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-
+import "calendar.js"
+import "theme.js"
+import "image_preview.js"
 Rails.start()
 ActiveStorage.start()
