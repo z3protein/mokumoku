@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2022_01_19_072358) do
   end
 
   create_table "notification_timings", force: :cascade do |t|
-    t.integer "timing"
+    t.integer "timing", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
