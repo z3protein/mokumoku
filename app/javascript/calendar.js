@@ -23,8 +23,7 @@ document.addEventListener('DOMContentLoaded',  async () => {
     const calendarEl = document.getElementById('calendar');
     if (!calendarEl) return;
 
-    const events = await fetchEvents()
-    console.log(events)
+    const { events } = await fetchEvents()
     const calendar = new Calendar(calendarEl, {
         plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin ],
         headerToolbar: {

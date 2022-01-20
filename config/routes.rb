@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     resource :password_change, only: %i[show update]
   end
 
-  namespace :api do
+  namespace :api, defaults: { format: :json } do
     namespace :me do
       resources :events, only: %i[index]
     end
