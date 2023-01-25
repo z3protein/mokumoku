@@ -2,7 +2,7 @@
 
 ## 環境構築
 ```
-$ bundle install
+$ bundle install --without=production
 $ bin/rails db:setup
 $ yarn install
 $ bin/rails s
