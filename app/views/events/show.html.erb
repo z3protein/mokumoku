@@ -43,6 +43,11 @@
           <i class="bi bi-info-circle"></i>
           イベントの説明
         </div>
+        <% if @event.only_woman? %>
+          <div class="card-header">
+            女性限定
+          </div>
+        <% end %>
         <div class="card-body">
           <%= simple_format @event.content %>
         </div>
@@ -131,7 +136,13 @@
             <div class="mb-3">
               <%= f.text_area :content, class: 'form-control' %>
             </div>
-            <%= f.submit class: 'btn btn-primary btn-sm' %>
+            <% if @event.only_woman? %>
+              <% if current_user.woman? %>
+                <%= f.submit class: 'btn btn-primary btn-sm' %>
+              <% end %>
+            <% else %>
+              <%= f.submit class: 'btn btn-primary btn-sm' %>
+            <% end %>
           <% end %>
         </div>
       </div>

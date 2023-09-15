@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class EventsController < ApplicationController
+
   def index
+    @event = Event.where(only_woman: true)
     @q = Event.future.ransack(params[:q])
     @events = @q.result(distinct: true).includes(:bookmarks, :prefecture, user: { avatar_attachment: :blob })
                 .order(created_at: :desc).page(params[:page])
@@ -60,6 +62,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :content, :held_at, :prefecture_id, :thumbnail)
+    params.require(:event).permit(:title, :content, :held_at, :prefecture_id, :only_woman, :thumbnail)
   end
 end
