@@ -382,7 +382,7 @@ DEPENDENCIES
   rubocop
   rubocop-rails
   sass-rails (>= 6)
-  selenium-webdriver
+  selenium-webdriver (= 4.9.0)
   sorcery
   spring
   sqlite3 (~> 1.4)

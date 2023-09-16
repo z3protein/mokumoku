@@ -9,10 +9,6 @@
       </h4>
       <p class="card-text"><%= event.content %></p>
       <hr />
-      <% if event.only_woman? %>
-        <p class="card-text">女性限定</p>
-      <hr />
-      <% end %>
       <div class="d-flex justify-content-between">
         <div>
           <i class="bi bi-geo-alt"></i>
@@ -37,6 +33,9 @@
               <%= render 'events/bookmarks/bookmark', event: event %>
             <% end %>
           </div>
+        <% end %>
+        <% if event.only_woman? %>
+          <p class="card-text">女性限定</p>
         <% end %>
       </div>
     </div>

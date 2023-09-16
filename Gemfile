@@ -47,7 +47,7 @@ group :development, :test do
   gem 'rb-readline'
   gem 'rspec-rails'
   gem 'capybara', '~> 3.23'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '4.9.0'
   gem 'webdrivers'
 end
 
