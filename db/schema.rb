@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_19_072358) do
+ActiveRecord::Schema.define(version: 2023_09_17_112934) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -73,12 +73,12 @@ ActiveRecord::Schema.define(version: 2022_01_19_072358) do
   create_table "events", force: :cascade do |t|
     t.string "title", null: false
     t.text "content", null: false
-    t.boolean "only_woman", default: false
     t.datetime "held_at", null: false
     t.integer "prefecture_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "only_woman", default: false
     t.index ["prefecture_id"], name: "index_events_on_prefecture_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
@@ -134,9 +134,9 @@ ActiveRecord::Schema.define(version: 2022_01_19_072358) do
     t.string "crypted_password"
     t.string "salt"
     t.string "name", null: false
-    t.integer "gender", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "gender", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

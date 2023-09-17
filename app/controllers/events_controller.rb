@@ -3,7 +3,7 @@
 class EventsController < ApplicationController
 
   def index
-    @event = Event.where(only_woman: true)
+    @events = Event.where(only_woman: true)
     @q = Event.future.ransack(params[:q])
     @events = @q.result(distinct: true).includes(:bookmarks, :prefecture, user: { avatar_attachment: :blob })
                 .order(created_at: :desc).page(params[:page])

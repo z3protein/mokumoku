@@ -78,14 +78,4 @@ class User < ApplicationRecord
   def allow_liked_event_notification?
     notification_timings.liked_event.present?
   end
-
-  attr_accessor :gender_option
-
-  before_save :set_gender
-
-  private
-
-  def set_gender
-    self.gender = gender_option if gender_option.present?
-  end
 end
